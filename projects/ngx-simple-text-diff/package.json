@@ -9,9 +9,9 @@
     "url": "https://github.com/jjtortosa/ngx-simple-text-diff/issues"
   },
   "homepage": "https://github.com/jjtortosa/ngx-simple-text-diff",
-  "dependencies": {
-  },
   "peerDependencies": {
-    "diff": "^5.1.0"
+    "@angular/common": "^17.0.0 || ^18.0.0 || ^19.0.0 || ^20.0.0 || ^21.0.0",
+    "@angular/core": "^17.0.0 || ^18.0.0 || ^19.0.0 || ^20.0.0 || ^21.0.0",
+    "diff": "^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0"
   }
 }

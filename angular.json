@@ -23,13 +23,6 @@
             }
           },
           "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "tsConfig": "projects/ngx-simple-text-diff/tsconfig.spec.json",
-            "karmaConfig": "projects/ngx-simple-text-diff/karma.conf.js"
-          }
         }
       }
     },
@@ -107,30 +100,6 @@
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "polyfills": ["zone.js", "zone.js/testing"],
-            "tsConfig": "projects/ngx-simple-text-diff-showcase/tsconfig.spec.json",
-            "karmaConfig": "projects/ngx-simple-text-diff-showcase/karma.conf.js",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "projects/ngx-simple-text-diff-showcase/src/assets",
-                "output": "/assets"
-              },
-              {
-                "glob": "favicon.ico",
-                "input": "projects/ngx-simple-text-diff-showcase/src",
-                "output": "/"
-              }
-            ],
-            "styles": [
-              "projects/ngx-simple-text-diff-showcase/src/styles.scss"
-            ],
-            "scripts": ["./node_modules/diff/dist/diff.min.js"]
-          }
         }
       }
     }
