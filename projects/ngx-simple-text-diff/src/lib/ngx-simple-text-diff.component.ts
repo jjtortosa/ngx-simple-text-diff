@@ -7,7 +7,9 @@ declare const Diff: {
 @Component({
   selector: 'lib-ngx-simple-text-diff',
   template: `
-    <span *ngFor="let part of diff" [ngClass]="{added: part.added, removed: part.removed}">{{part.value}}</span>
+    @for (part of diff; track $index) {
+      <span [class.added]="part.added" [class.removed]="part.removed">{{part.value}}</span>
+    }
   `,
   styles: [`
     :host {
@@ -28,18 +30,14 @@ declare const Diff: {
 })
 export class NgxSimpleTextDiffComponent implements OnChanges {
 
-
-  @Input() oldText: string;
-  @Input() newText: string;
-  public diff: DiffPart[];
-
-  constructor() {
-  }
+  @Input() oldText: string = '';
+  @Input() newText: string = '';
+  public diff: DiffPart[] = [];
 
   ngOnChanges(): void {
     this.diff = Diff.diffWordsWithSpace(
-      this.oldText.replace(/\n/, '↵\n'),
-      this.newText.replace(/\n/, '↵\n')
+      this.oldText.replace(/\n/g, '↵\n'),
+      this.newText.replace(/\n/g, '↵\n')
     );
   }
 

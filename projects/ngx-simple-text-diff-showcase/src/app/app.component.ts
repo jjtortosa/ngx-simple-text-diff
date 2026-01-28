@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { NgxSimpleTextDiffComponent } from 'ngx-simple-text-diff';
 
 @Component({
   selector: 'app-root',
+  imports: [FormsModule, NgxSimpleTextDiffComponent],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'ngx-simple-text-diff-showcase';
